@@ -1,0 +1,9 @@
+<!-- ng-if ①单向绑定很妙-->
+<div *ngIf="messageService.messages.length">
+  <h2>Messages</h2>
+  <!-- 对数据对象进行改动配合单向绑定后驱动界面对象①② -->
+  <button class="clear"
+          (click)="messageService.clear()"  >clear</button>
+  <!-- ng-for ②单向绑定很妙-->
+  <div *ngFor="let msg of messageService.messages">{{msg}}</div>
+</div>

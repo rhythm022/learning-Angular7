@@ -1,0 +1,13 @@
+<!-- ng-if 配合数据对象的绑定-->
+<div *ngIf="selectedPerson">
+    <h2>{{selectedPerson.name | uppercase}} Details</h2>
+    <div><span>id:</span>{{selectedPerson.id}}</div>
+    <div>
+      <label >name:
+        <!-- ng-model -->
+        <input [(ngModel)]="selectedPerson.name" placeholder="name">
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+  </div>

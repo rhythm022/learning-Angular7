@@ -1,0 +1,24 @@
+<ul class="persons">
+  <!-- ng-for配合{{}} 绑定数据对象-->
+  <!-- ng-click 绑定事件-->
+  <!-- ng-class 绑定CSS-->
+  <li  *ngFor="let person of persons"
+  (click)="onSelect(person)"
+  [ngClass]="{'selected': person === selectedPerson}"
+ 
+  >
+  <a routerLink="/person-detail/{{person.id}}">
+    <span class="badge">{{person.id}} </span>{{person.name}}
+  </a>
+  <button class="delete" title="delete person" (click)="delete(person)">×</button></li>
+</ul>
+<div>
+  <label for="">Person name:
+    <!-- #personName -->
+    <input #personName/>
+  </label>
+  <button (click)="add(personName.value); personName.value=''; ">add</button>
+</div>
+<!-- 一个View对象分成多个View组件 -->
+<!-- 只需要新建一个组件然后下述① -->
+<!-- <app-person-detail [selectedPerson]="selectedPerson"></app-person-detail> -->
